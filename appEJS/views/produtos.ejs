@@ -7,5 +7,23 @@
   <body>
     <h1><%= title %></h1>
     <p>Aqui você encontrará informações sobre nossos produtos.</p>
+
+    <div class="cards-container">
+      <% 
+      const produtos = [
+        { nome: 'Fenda Tramontina', icon: '🛠️', descricao: 'Ferramenta de alta qualidade para construção.' },
+        { nome: 'Martelo Tramontina', icon: '🔨', descricao: 'Martelo resistente para uso geral.' },
+        { nome: 'Chave de Fenda', icon: '🔧', descricao: 'Conjunto de chaves de fenda variadas.' },
+        { nome: 'Serra Elétrica', icon: '🪚', descricao: 'Serra elétrica para cortes precisos.' }
+      ];
+      %>
+      <% produtos.forEach(produto => { %>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true"><%= produto.icon %></div>
+          <h3><%= produto.nome %></h3>
+          <p><%= produto.descricao %></p>
+        </div>
+      <% }); %>
+    </div>
   </body>
 </html>

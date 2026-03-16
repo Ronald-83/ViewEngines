@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Jogadores famosos do futebol.</p>
+
+    <div class="cards-container">
+      <% 
+      const jogadores = [
+        { nome: 'Pelé', icon: '👑', descricao: 'Lenda do futebol brasileiro.' },
+        { nome: 'Messi', icon: '🐐', descricao: 'Jogador argentino, considerado um dos melhores.' },
+        { nome: 'Cristiano Ronaldo', icon: '🔥', descricao: 'Estrela portuguesa do Real Madrid.' },
+        { nome: 'Neymar', icon: '⚡', descricao: 'Atacante brasileiro do PSG.' }
+      ];
+      %>
+      <% jogadores.forEach(jogador => { %>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true"><%= jogador.icon %></div>
+          <h3><%= jogador.nome %></h3>
+          <p><%= jogador.descricao %></p>
+        </div>
+      <% }); %>
+    </div>
+  </body>
+</html>

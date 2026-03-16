@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Informações sobre o mundo do futebol.</p>
+
+    <div class="cards-container">
+      <% 
+      const itens = [
+        { nome: 'Campeonato Brasileiro', icon: '🏆', descricao: 'O principal campeonato de futebol do Brasil.' },
+        { nome: 'Copa do Mundo', icon: '🌍', descricao: 'O maior torneio internacional de futebol.' },
+        { nome: 'Libertadores', icon: '⚽', descricao: 'A competição continental da América do Sul.' },
+        { nome: 'Champions League', icon: '⭐', descricao: 'O torneio de clubes mais prestigiado da Europa.' }
+      ];
+      %>
+      <% itens.forEach(item => { %>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true"><%= item.icon %></div>
+          <h3><%= item.nome %></h3>
+          <p><%= item.descricao %></p>
+        </div>
+      <% }); %>
+    </div>
+  </body>
+</html>

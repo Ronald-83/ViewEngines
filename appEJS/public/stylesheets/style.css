@@ -58,14 +58,17 @@ a:hover {
   box-shadow: 0 12px 24px rgba(0, 61, 122, 0.25);
 }
 
-.card img {
+.card-icon {
   width: 100%;
   height: 200px;
-  object-fit: cover;
-  display: block;
+  display: grid;
+  place-items: center;
+  font-size: 5rem;
+  background: linear-gradient(135deg, rgba(0, 61, 122, 0.15), rgba(255, 255, 255, 0.6));
+  color: #003d7a;
 }
 
-.card h2 {
+.card h3 {
   color: #003d7a;
   padding: 20px 20px 10px 20px;
   font-size: 1.5em;
