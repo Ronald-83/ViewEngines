@@ -5,7 +5,43 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <header class="site-header">
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/futebol">Futebol</a>
+        <a href="/produtos/detalhes/0">Produtos</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1><%= title %></h1>
+      <p>Bem-vindo ao exemplo com View Engines — aqui mostramos conteúdo dinâmico passado pela rota.</p>
+
+      <div class="intro">
+        <p>Explore exemplos de cada view engine: dicas, cards e links rápidos para abrir subrotas.</p>
+      </div>
+
+      <div class="cards-container">
+        <% if (cards && cards.length) { %>
+          <% cards.forEach(item => { %>
+            <div class="card">
+              <div class="card-icon" aria-hidden="true"><%= item.icon %></div>
+              <h3><%= item.nome %></h3>
+              <p><%= item.descricao %></p>
+              <p class="small"><a href="/produtos/detalhes/0">Ver exemplos relacionados</a></p>
+            </div>
+          <% }); %>
+        <% } else { %>
+          <p>Nenhum item disponível no momento.</p>
+        <% } %>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">📚</div>
+          <h3>Tutoriais</h3>
+          <p>Guias rápidos para entender como passar dados das rotas para as views.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">Projeto de exemplo - ViewEngines</footer>
   </body>
 </html>

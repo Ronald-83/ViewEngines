@@ -1,22 +1,29 @@
 <h1>{{title}}</h1>
-<p>Está pagina fala sobre handebol.</p>
+<p>Está página fala sobre handebol.</p>
+
+<p>
+  <a class="btn-sub" href="/handebol/equipes">Ver equipes</a>
+</p>
 
 <div class="cards-container">
-  <div class="card">
-    <div class="card-icon" aria-hidden="true">🤾‍♂️</div>
-    <h2>Handebol Masculino</h2>
-    <p>O handebol masculino é um esporte emocionante que combina velocidade, força e técnica. Acompanhe os melhores times e atletas.</p>
-  </div>
-  
-  <div class="card">
-    <div class="card-icon" aria-hidden="true">🤾‍♀️</div>
-    <h2>Handebol Feminino</h2>
-    <p>Conheça as atletas incríveis do handebol feminino, que demonstram habilidade, determinação e paixão pelo esporte.</p>
-  </div>
-  
-  <div class="card">
-    <div class="card-icon" aria-hidden="true">🏆</div>
-    <h2>Grandes Campeonatos</h2>
-    <p>Acompanhe as maiores competições de handebol do mundo, desde as Olympíadas até os campeonatos estaduais.</p>
-  </div>
+  {{#if equipes}}
+    {{#each equipes}}
+      <div class="card">
+        <div class="card-icon" aria-hidden="true">🤾‍♂️</div>
+        <h2>{{this.nome}}</h2>
+        <p>{{this.destaque}}</p>
+      </div>
+    {{/each}}
+  {{else}}
+    <div class="card">
+      <div class="card-icon" aria-hidden="true">🤾‍♀️</div>
+      <h2>Handebol</h2>
+      <p>O handebol é um esporte de equipe que combina técnica e velocidade.</p>
+    </div>
+  {{/if}}
 </div>
+
+<section class="treinamentos">
+  <h2>Treinamentos</h2>
+  <p>Programa de treinos semanais com foco em resistência, tática e finalização.</p>
+</section>

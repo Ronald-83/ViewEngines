@@ -1,2 +1,23 @@
 <h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<p>Bem-vindo ao app Handlebars — notícias e destaques.</p>
+
+<p>Explore conteúdos, tutoriais e exemplos práticos. Clique nos links da navbar para abrir subrotas com detalhes.</p>
+
+<div class="cards-container">
+	{{#if noticias}}
+		{{#each noticias}}
+			<div class="card">
+				<div class="card-icon" aria-hidden="true">📰</div>
+				<h2>{{this.titulo}}</h2>
+				<p>{{this.resumo}}</p>
+			</div>
+		{{/each}}
+		<div class="card">
+			<div class="card-icon" aria-hidden="true">💡</div>
+			<h2>Dicas</h2>
+			<p>Boas práticas para desenvolvimento com Handlebars e Express.</p>
+		</div>
+	{{else}}
+		<p>Sem notícias por enquanto.</p>
+	{{/if}}
+</div>

@@ -81,3 +81,29 @@ a:hover {
   margin: 0;
 }
 
+/* Header/Footer */
+.site-header {
+  margin-bottom: 30px;
+}
+.nav {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.nav a {
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: rgba(0, 61, 122, 0.06);
+  color: #003d7a;
+}
+.nav a:hover {
+  background: rgba(0, 61, 122, 0.12);
+}
+.site-footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #1a1a1a;
+  opacity: 0.8;
+}
+

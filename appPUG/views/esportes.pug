@@ -3,19 +3,40 @@ extends layout
 block content
   h1= title
   p Esta página fala sobre esportes.
-  
+  p
+    a(href='/esportes/detalhes') Ver detalhes dos esportes →
+
+  .cards-container
+    if esportes
+      each sp in esportes
+        .card
+          .card-icon(aria-hidden='true')
+            if sp.icon
+              = sp.icon
+            else
+              if sp.nome == 'Futebol'
+                | ⚽
+              else if sp.nome == 'Basquete'
+                | 🏀
+              else if sp.nome == 'Vôlei'
+                | 🏐
+              else
+                | 🏷️
+          h2= sp.nome
+          if sp.destaque
+            p= sp.destaque
+          else if sp.descricao
+            p= sp.descricao
+    else
+      p Sem esportes para exibir.
+
+  if detalhes
+    section.detalhes
+      h2 Detalhes
+      p Aqui estão informações mais completas sobre cada esporte.
+
   .cards-container
     .card
-      img(src='https://via.placeholder.com/300x200?text=Futebol' alt='Futebol')
-      h2 Futebol
-      p O futebol é o esporte mais popular do mundo, conhecido como o "jogo bonito". Confira as melhores partidas e técnicas.
-    
-    .card
-      img(src='https://via.placeholder.com/300x200?text=Basquete' alt='Basquete')
-      h2 Basquete
-      p O basquete é um esporte rápido e emocionante que requer agilidade e precisão. Descubra os melhores jogadores.
-    
-    .card
-      img(src='https://via.placeholder.com/300x200?text=Volei' alt='Volei')
-      h2 Vôlei
-      p O vôlei é um esporte de equipe que exige técnica, força e sincronia perfeita entre os jogadores.
+      .card-icon(aria-hidden='true') 🏆
+      h2 Eventos
+      p Calendários, resultados e análises das principais competições.

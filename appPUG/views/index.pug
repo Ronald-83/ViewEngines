@@ -2,4 +2,22 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Página inicial com destaques passados pela rota.
+
+  p
+    a(href='/esportes') Ver esportes →
+
+  .cards-container
+    if destaques
+      each item in destaques
+        .card
+          .card-icon(aria-hidden='true') 🏷️
+          h2= item.titulo
+          p= item.descricao
+    else
+      p Sem destaques no momento.
+
+    .card
+      .card-icon(aria-hidden='true') 🔧
+      h2 Recursos
+      p Tutoriais e exemplos para começar com Pug e Express.

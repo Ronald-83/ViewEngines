@@ -3,19 +3,19 @@ extends layout
 block content
   h1= title
   p Informações sobre comida.
-  
+  p
+    a(href='/comida/pratos') Ver mais pratos e receitas →
+
   .cards-container
-    .card
-      .card-icon(aria-hidden='true') 🍕
-      h2 Pizza
-      p Deliciosa pizza italiana com diversos sabores.
-    
-    .card
-      .card-icon(aria-hidden='true') 🍔
-      h2 Hambúrguer
-      p Clássico hambúrguer americano.
-    
-    .card
-      .card-icon(aria-hidden='true') 🍣
-      h2 Sushi
-      p Pratos japoneses frescos e saborosos.
+    if pratos
+      each prato in pratos
+        .card
+          .card-icon(aria-hidden='true')= prato.icon
+          h2= prato.nome
+          p= prato.descricao
+    else
+      p Nenhum prato encontrado.
+
+  section.receitas
+    h2 Receitas rápidas
+    p Experimente uma receita simples: massa ao alho e óleo com ervas frescas.

@@ -3,19 +3,21 @@ extends layout
 block content
   h1= title
   p Pratos deliciosos de várias culinárias.
-  
+
   .cards-container
-    .card
-      .card-icon(aria-hidden='true') 🍝
-      h2 Lasanha
-      p Massa italiana recheada com molho e queijo.
-    
-    .card
-      .card-icon(aria-hidden='true') 🫘
-      h2 Feijoada
-      p Prato brasileiro tradicional com feijão e carnes.
-    
-    .card
-      .card-icon(aria-hidden='true') 🦐
-      h2 Paella
-      p Prato espanhol com arroz e frutos do mar.
+    if pratos
+      each prato in pratos
+        .card
+          .card-icon(aria-hidden='true')
+            if prato.icon
+              = prato.icon
+            else
+              | 🍽️
+          h2= prato.nome
+          p= prato.descricao
+      .card
+        .card-icon(aria-hidden='true') 🧂
+        h2 Sugestões
+        p Temperos e acompanhamentos que combinam com cada prato.
+    else
+      p Nenhum prato disponível.
